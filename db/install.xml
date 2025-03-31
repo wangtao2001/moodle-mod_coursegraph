@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="mod/coursegraph/db" VERSION="20240320" COMMENT="XMLDB file for coursegraph module">
+    <TABLES>
+        <TABLE NAME="coursegraph" COMMENT="Stores coursegraph instances">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/><!--id-->
+                <FIELD NAME="course" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/><!--课程id-->
+                <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false"/><!--名称-->
+                <FIELD NAME="serverurl" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" COMMENT="Backend server URL"/><!--后端服务器URL-->
+                <FIELD NAME="apikey" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" COMMENT="API key for authentication"/><!--API key-->
+                <FIELD NAME="intro" TYPE="text" NOTNULL="false" SEQUENCE="false"/><!--简介-->
+                <FIELD NAME="introformat" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/><!--简介格式-->
+                <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/><!--创建时间-->
+                <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/><!--修改时间-->
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+            </KEYS>
+            <INDEXES>
+                <INDEX NAME="course" UNIQUE="false" FIELDS="course"/>
+            </INDEXES>
+        </TABLE>
+    </TABLES>
+</XMLDB>
